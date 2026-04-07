@@ -13,7 +13,7 @@ The project uses four main tables:
 - **`savings_savingsaccount`** → Transaction records
 - **`savings_savingsaccount`** → Withdrawal records 
 
-** Key Relationships **  
+**Key Relationships**  
 - `owner_id` → Foreign key to `users_customuser.id`  
 - `plan_id` → Foreign key to `plans_plan.id`  
 
@@ -41,7 +41,7 @@ Identify customers who have **both savings and investment plans**, sorted by **t
 ---
 
 ### 2️. Transaction Frequency Analysis
-** Objective:**  
+**Objective:**  
 Segment customers based on how frequently they transact **per month**.
 
 **Approach:**  
