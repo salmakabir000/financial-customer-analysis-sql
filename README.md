@@ -13,11 +13,11 @@ The project uses four main tables:
 - **`savings_savingsaccount`** → Transaction records
 - **`savings_savingsaccount`** → Withdrawal records 
 
-** Key Relationships**  
+** Key Relationships **  
 - `owner_id` → Foreign key to `users_customuser.id`  
 - `plan_id` → Foreign key to `plans_plan.id`  
 
-** Notes**  
+**Notes**  
 - Savings plans → `is_regular_savings = 1`  
 - Investment plans → `is_a_fund = 1`  
 - `confirmed_amount` → Deposit/inflow  
@@ -29,10 +29,10 @@ The project uses four main tables:
 ## Project Questions & Approaches
 
 ### 1️. High-Value Customers with Multiple Products
-** Objective:**  
+**Objective:**  
 Identify customers who have **both savings and investment plans**, sorted by **total deposits**.
 
-** Approach:**  
+**Approach:**  
 - Count savings and investment plans per customer.  
 - Calculate **total deposits** per customer.  
 - Join these results with the users table.  
@@ -44,7 +44,7 @@ Identify customers who have **both savings and investment plans**, sorted by **t
 ** Objective:**  
 Segment customers based on how frequently they transact **per month**.
 
-** Approach:**  
+**Approach:**  
 - Calculate **monthly transactions** per customer.  
 - Compute **average monthly transactions**.  
 - Categorize customers into:  
@@ -56,10 +56,10 @@ Segment customers based on how frequently they transact **per month**.
 ---
 
 ### 3️. Account Inactivity Alert
-** Objective:**  
+**Objective:**  
 Flag accounts with **no transactions in the last 365 days**.
 
-** Approach:**  
+**Approach:**  
 - Define **account types** (savings vs. investment).  
 - Determine a **reference date** (latest transaction date).  
 - Use **LEFT JOIN** to include even accounts with **no transactions**.  
@@ -71,10 +71,10 @@ Flag accounts with **no transactions in the last 365 days**.
 ---
 
 ### 4️. Customer Lifetime Value (CLV) Estimation
-** Objective:**  
+**Objective:**  
 Estimate **customer value** based on transaction volume and account tenure.
 
-** Approach:**  
+**Approach:**  
 - Join users with transaction data from savings table.  
 - Calculate:  
   - **Tenure:** months since signup  
